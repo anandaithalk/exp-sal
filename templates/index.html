@@ -1,0 +1,97 @@
+<!-- Experience to Salary App GUI -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Experience vs Salary API</title>
+
+  <style>
+
+    h1   {color: #1E90FF;}  /* CSS code for heading h1 */
+    h2   {color: #306EFF;}    /* CSS code for heading h2 */
+    h3   {color: #DC143C;}    /* CSS code for heading h3 */
+    h4   {color: #045F5F;}     /* CSS code for heading h4 */
+    h7   {color: #033E3E;}      /* CSS code for heading h7 */
+    h8   {color: maroon}      /* CSS code for heading h8 */
+    /* CSS code for button */
+    
+    .button_css {
+      background-color: none /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration:none; 
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    
+    .button_css:hover {
+      background-color: #3e8e41;
+    }          
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #16E2F5 ;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Show Experience to Salary Prediction-->
+  <div>
+    <center>
+    <img src="static/images/banner.PNG" class="w3-border w3-padding" alt=" " height="5%" width="90%" >
+    <br>
+    <h4> Developed by </h4> 
+    <font face = 'Brush Script MT', cursive size="5px"> <h3> Anand Aithal K</h3> </font>
+    </center>
+    </div>
+
+  <style>
+    body {
+      background-image: url("static/images/back.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+  
+  
+ <div class="login">
+	
+    <!-- Form Get input to predict salary-->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h1>******* Please enter the years of experience *******</h1>
+        
+    	<input align="center" type="number" step= "any" min = "0"  name="experience" placeholder="Years of Experience" required="required" width="48" height="10"/>
+    	<br>
+        
+        <br>
+        
+        <!-- Show button -->
+        <div class="button_cont" align="center" ><a class="button_css"  target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong><h7>Predict Salary</h7></strong></button></a>
+        </div>
+        
+    </form>
+    </center>
+   
+   <!-- Show the predicted value retrieved from ML model --> 
+   <div>
+       <center>
+   <h2>
+    <font face = 'Brush Script MT', cursive size="7px">
+     {{ prediction_text }}</h2>
+       </center>
+   </div>
+
+
+</body>
+</html>
